@@ -9,93 +9,64 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css.map">
     <link rel="stylesheet" href="css/normilize.css">
     <link rel="stylesheet" href="css/style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-1/RvZTcCDEUjY/CypiMz+iqqtaoQfAITmNSJY17Myp4Ms5mdxPS5UV7iOfdZoxcGhzFbOm6sntTKJppjvuhg4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 <body>
-<!--     
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-mg-6">888</div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-mg-6">888</div>
-    </div> -->
 
-    <div class="jobs pt-5 container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6" >
-                <div class="definition">
-                    <img src="data:image/png;base64,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" alt="">
 
-                    <div class="detail fw-bolder mt-2">
-                        <h4><a href="">Customer Assistant</a></h4>
-                        <p>Sutton Coldfield</p>
-                        <p>£10.90 - £12.00/hour</p>
-                        <p>Customer Assistant (Part Time)</p>
-                        <p>Summary £10.90 up to £12.00 per hour - This isn't stacking shelves. This is feeding families.</p>
-                        
-                    </div>
-                </div>
-                <div class="box">
-                    <div class="filed">
-                        <h6>Empoloyer name & comh6any</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
-                    <div class="filed">
-                        <h6>Job Title</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-    
-                    </div>
-                    <div class="filed">
-                        <h6>Descrih6tion </h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-    
-                    </div>
-                    <div class="filed">
-                        <h6>Requirements</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-    
-                    </div>
-                    <div class="filed">
-                        <h6>Jobs Benefits</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-    
-                    </div>
-                    <div class="filed">
-                        <h6>Oh6h6ortinuinites</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-    
-                    </div>
-                    <div class="filed">
-                        <h6>Amenities</h6>
-                        <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
-                    </div>
-                </div>
-            </div>
-            
-
-            
-            <!-- <div class="box col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                
-            </div> -->
-            <div class="head col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                <div class="part mt-5">
-                    <div class="header">Header</div>
-                    <div class="content mt-2"> content</div>
-                </div>
-                <div class="part mt-5">
-                    <div class="header">Header</div>
-                    <div class="content mt-2"> content</div>
-                </div>
-            </div>
+    <nav class="navbar navbar-expand-lg bg-success position-fixed">
+        <div class="container-fluid">
+          <a class="navbar-brand text-white" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#">Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white"  href="#">Link</a>
+              </li>
+              <li class="nav-item ms-2 mt-2">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </li>
+              
+            </ul>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success bg-white text-success" type="submit">Search</button>
+            </form>
+          </div>
         </div>
-        <div class="detail mt-4">
-            <h4><a href="">Other</a></h4>
-            <p>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.</p>
+      </nav>
 
-        </div>
-    </div> 
+      <div class="cart  bg-success text-center text-white">
+          gdfdgfdg
+      </div>
+      <div class="container">
+        <div class=" blog row"></div>
+
+      </div>
+      
+      <script src="./js/script.js"></script>
+
+      <script src="./js/jqurery.js"></script>
+        
+
+     
+
+      
+
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+
 </body>
 </html>

@@ -4,74 +4,25 @@
     box-sizing: border-box;
 }
 @media(max-width:767px){
-    .jobs .row .Galerie  img{
-    }
+    
 }
 @media(min-width:768px){
-    .jobs .row div .definition  img{
-        width: 36rem;
-        height: 29rem;
-        margin: 0px -55px;
-    }
-    .jobs  .row div {
-        /* width: 23rem; */
-    }
-    
-    .head{
-        margin-left: 7rem;
-    }
 }
-.jobs .row div .definition img{
-    /* width: 300px;
-    height: 300px; */
-    transform: scale(.8);
-    -webkit-transform: scale(.8);
-    -moz-transform: scale(.8);
-    -ms-transform: scale(.8);
-    -o-transform: scale(.8);
-    transition: .5s ease-in-out;
-    -webkit-transition: .5s ease-in-out;
-    -moz-transition: .5s ease-in-out;
-    -ms-transition: .5s ease-in-out;
-    -o-transition: .5s ease-in-out;
-    cursor: pointer;
-}
-.jobs .row div .definition  img:hover{
-    transform: scale(1);
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    
-}
-.row div div h6{
-    text-decoration: underline;
-    font-weight: bolder;
-    color: #f26122;
-    font-size: 20px;
-    cursor: pointer;
-}
-.Galerie .part{
-
-}
-.part .header{
-    background-color: #f26122;
-    padding: 10px 36px;
-    color: white;
-    font-weight: bolder;
-    
-}
-.part .content{
-    background-color: #ededed33;
-    padding: 10px 36px;
-    height: 35rem;
-}
-.row div div p{
+nav{
     width: 100%;
-    color: #50575e;
-    
+    z-index: 4;
 }
-
-a{
-    color: #f26122;
-} 
+nav div div ul li a{
+    color: white;
+}
+.cart{
+    width: 19rem;
+    height: 100%;
+    position: fixed;
+    margin: 57px 0rem;
+    z-index: 4;
+    display: none;
+}
+.cart.act{
+    display: block;
+}

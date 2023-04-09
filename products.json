@@ -1,0 +1,86 @@
+[
+    {
+        "id":0,
+        "name": "mouse",
+        "price": 10,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/a.png"
+    },
+    {
+        "id":1,
+        "name": "keybord",
+        "price": 20,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/b.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    }
+]
