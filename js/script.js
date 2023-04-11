@@ -1,42 +1,429 @@
 // call a fetch methods that can call server and get file json
-fetch("./products.json")
-.then(function (response) {
+// fetch("./products.json")
+// .then(function (response) {
 
-    // will use the json method to convert json data to javascript object
-    return response.json()
+//     // will use the json method to convert json data to javascript object
+//     return response.json()
+// })
+
+// .then(function (products) {
+
+//     console.log(products)
+//     let blog = document.querySelector('.blog')
+//     let out =  " "
+//     for (let product of products) {
+//         out +=  `
+        
+//         <div class="card col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3" style="width: 18rem;"  >
+//             <img src="${product.img}" class="card-img-top" alt="...">
+//             <div class="card-body">
+//                 <h5> ${product.name}</h5>
+//                 <span> ${product.price} $ </span>
+//                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                 <button  onclick="addToCart(${key})" class="btn btn-primary">Add To Cart</button>
+//             </div>
+//         </div>
+        
+//         `
+        
+//     }
+
+//     blog.innerHTML = out
+// })
+
+// fetch("./products.json")
+// .then( (response)=>{
+//     return response.json()
+// })
+// .catch((products)=>{
+//     // products.forEach(product => {
+//     //     console.log(product)
+//     // });
+//     console.log(products)
+
+// })
+const products = [
+    {
+        "id":0,
+        "name": "mouse",
+        "price": 10,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/a.png"
+    },
+    {
+        "id":1,
+        "name": "keybord",
+        "price": 20,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/b.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    },
+    {
+        "id":2,
+        "name": "laptop",
+        "price": 30,
+        "description": "lorem lorem lorem lorem",
+        "img": "./img/c.png"
+    }
+]
+let blog = document.querySelector('.blog')
+
+
+const categorie = [...new Set(products.map((items) =>  {return items})) ]
+
+let i = 0
+blog.innerHTML = categorie.map((items)=> 
+    {
+        const {name, price, img} = items
+        return(
+            `
+        
+        <div class="card " style="width: 18rem;"  >
+
+
+            <img src="${img}" class="card-img-top" alt="...">
+              <div class="card-body">
+               <h5> ${name}</h5>
+               <span> ${price} $ </span>
+               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>` 
+               + 
+               
+                "<button onclick= addtocart("+ (i++) +")  >Add To Cart</button> "
+                
+               +
+                `
+                </div>
+        </div>)
+        `)
+    }
+
+).join("")
+
+// // create cart iem box ---------------------------------------------
+let slider = document.querySelector('.cart')
+let iconshop = document.querySelector('.fa-cart-shopping')
+iconshop.addEventListener("click", ()=>{
+    slider.classList.toggle('act') 
 })
 
-.then(function (products) {
+var cart = [];
+let bodycart = document.querySelector('.bodycart')
 
-    console.log(products)
-    let blog = document.querySelector('.blog')
-    let out =  " "
-    for (let product of products) {
-        out +=  `
+function addtocart(a){
+    cart.push({...categorie[a]})
+    displaycart( )
+
+}
+function deletelemnt(a) {
+    cart.splice(a, 1)
+    displaycart( )
+
+}
+
+function displaycart(a) {
+    let j = 0;
+    if (cart.length == 0) {
+        bodycart.innerHTML = "Your Cart is Empty"
+    } else {
+        bodycart.innerHTML = cart.map((items)=>{
+
+            const {name, price, img} = items
+            return(`
+            
+            
         
-        <div class="card col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3" style="width: 18rem;"  >
-            <img src="${product.img}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5> ${product.name}</h5>
-                <span> ${product.price} $ </span>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Add To Cart</a>
+        <div class="item">
+
+
+            <img src="${img}" >
+              <div class="d-flex justify-content-around">
+               <h5 class="text-black"> ${name}</h5>
+               <span> ${price} $ </span> <br>` 
+               + 
+               
+                "<button onclick= deletelemnt(" + (j++) + ")>remove</button>"
+                
+               +
+                `
             </div>
         </div>
         
-        `
-        
-    }
-
-    blog.innerHTML = out
-})
-let cart = doucment.querySelector('.cart')
-let iconshop = doucment.querySelector('.fa-cart-shopping')
-iconshop.addEventListener("click", ()=>{
-    cart.classList.toggle('act') 
-    alert('f')
-})
+            `)
+        })
+}
+}
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// products.forEach((product, key) => {
+//     console.log(product)
+//     let content = document.createElement('div')
+//     // content.setAttribute('.r')
+//     content.innerHTML = `
+//     <div class="card " style="width: 18rem;"  >
+//             <img src="${product.img}" class="card-img-top" alt="...">
+//              <div class="card-body">
+//                <h5> ${product.name}</h5>
+//               <span> ${product.price} $ </span>
+//               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                <button onclick="addToCart(${key})"  class="btn btn-primary">Add To Cart</button>
+//            </div>
+//      </div>
+    
+//     `
+//     blog.appendChild(content)
+// });
+
+
+
+// // create add to cart fucntion ----------------------------------------
+
+
+// let cartlist = []
+
+
+
+// function addToCart(key) {
+//     if (cartlist[key] == null ) {
+//         cartlist[key] == products[key]
+//         // cartlist[key].qauntity = 1
+//     }
+//     reaoldCart()
+// }
+
+// function reaoldCart() {
+//     cartlist.innerHTML = ""
+//     let count = 0
+//     cartlist.forEach((product, key) => {
+//         // count = count + product.qauntity
+//         if (value != null) {
+//             let li = document.createElement('div')
+//             // content.setAttribute('.r')
+            
+
+//             li.innerHTML = `
+            
+//             <div class="card " style="width: 10rem;"  >
+//                 <img src="${product.img}" class="card-img-top" alt="...">
+//                  <div class="card-body">
+//                    <h5> ${product.name}</h5>
+//                   <span> ${product.price} $ </span>
+//                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+//                </div>
+//             </div>
+            
+//             `
+
+//             cartlist.appendChild(li)
+//         }
+//     });
+    
+// }
