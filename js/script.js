@@ -78,6 +78,23 @@ const products = [
         "img": "./img/i.png"
     },
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let blog = document.querySelector('.blog')
 
 
@@ -90,17 +107,19 @@ blog.innerHTML = categorie.map((items)=>
         return(
             `
         
-        <div class="card " style="width: 18rem;"  >
+        <div class="card mt-4  "  >
 
 
-            <img src="${img}" class="card-img-top" alt="...">
-              <div class="card-body">
-               <h5> ${name}</h5>
-               <span> ${price} $ </span>
-               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>` 
+                <img src="${img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h5> ${name}</h5>
+                        <span> ${price} $ </span>
+                    </div>
+                    <p class="card-text">Some quick example text to build on the card title.</p>` 
                + 
                
-                "<button onclick= addtocart("+ (i++) +")  >Add To Cart</button> "
+                    "<button onclick= addtocart("+ (i++) +")  >Add To Cart</button> "
                 
                +
                 `
@@ -117,6 +136,13 @@ let iconshop = document.querySelector('.fa-cart-shopping')
 iconshop.addEventListener("click", ()=>{
     slider.classList.toggle('act') 
 })
+
+let remove = document.querySelector('.fa-xmark')
+
+remove.addEventListener("click", ()=>{
+    slider.classList.remove('act') 
+})
+
 
 var cart = [];
 let bodycart = document.querySelector('.bodycart')
@@ -150,17 +176,17 @@ function displaycart(a) {
         <div class="item">
 
 
-            <img src="${img}" >
-              <div class="d-flex justify-content-around">
-               <h5 class="text-black"> ${name}</h5>
-               <span> ${price} $ </span> <br>` 
-               + 
+                <img src="${img}" >
+                <div class="d-flex justify-content-around">
+                    <h5 class="text-black"> ${name}</h5>
+                    <span> ${price} $ </span> <br>` 
+                + 
                
-                "<button onclick= deletelemnt(" + (j++) + ")>remove</button>"
+                    "<button onclick= deletelemnt(" + (j++) + ")>remove</button>"
                 
-               +
+                +
                 `
-            </div>
+                </div>
         </div>
         
             `)
