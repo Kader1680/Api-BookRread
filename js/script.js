@@ -95,6 +95,16 @@ const products = [
 
 
 
+
+
+
+
+
+
+
+
+
+
 let blog = document.querySelector('.blog')
 
 
@@ -119,7 +129,7 @@ blog.innerHTML = categorie.map((items)=>
                     <p class="card-text">Some quick example text to build on the card title.</p>` 
                + 
                
-                    "<button onclick= addtocart("+ (i++) +")  >Add To Cart</button> "
+                    "<button class='btn' onclick= addtocart("+ (i++) +")  >Add To Cart</button> "
                 
                +
                 `
@@ -183,6 +193,7 @@ function displaycart(a) {
                 + 
                
                     "<button onclick= deletelemnt(" + (j++) + ")>remove</button>"
+                    
                 
                 +
                 `
