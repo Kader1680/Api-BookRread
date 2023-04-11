@@ -1,47 +1,4 @@
-// call a fetch methods that can call server and get file json
-// fetch("./products.json")
-// .then(function (response) {
 
-//     // will use the json method to convert json data to javascript object
-//     return response.json()
-// })
-
-// .then(function (products) {
-
-//     console.log(products)
-//     let blog = document.querySelector('.blog')
-//     let out =  " "
-//     for (let product of products) {
-//         out +=  `
-        
-//         <div class="card col-xs-12 col-sm-12 col-md-4 col-lg-3 col-xl-3" style="width: 18rem;"  >
-//             <img src="${product.img}" class="card-img-top" alt="...">
-//             <div class="card-body">
-//                 <h5> ${product.name}</h5>
-//                 <span> ${product.price} $ </span>
-//                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-//                 <button  onclick="addToCart(${key})" class="btn btn-primary">Add To Cart</button>
-//             </div>
-//         </div>
-        
-//         `
-        
-//     }
-
-//     blog.innerHTML = out
-// })
-
-// fetch("./products.json")
-// .then( (response)=>{
-//     return response.json()
-// })
-// .catch((products)=>{
-//     // products.forEach(product => {
-//     //     console.log(product)
-//     // });
-//     console.log(products)
-
-// })
 const products = [
     {
         "id":0,
@@ -69,64 +26,57 @@ const products = [
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/d.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/e.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/f.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/h.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/g.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/k.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/l.png"
     },
     {
         "id":2,
         "name": "laptop",
         "price": 30,
         "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
+        "img": "./img/i.png"
     },
-    {
-        "id":2,
-        "name": "laptop",
-        "price": 30,
-        "description": "lorem lorem lorem lorem",
-        "img": "./img/c.png"
-    }
 ]
 let blog = document.querySelector('.blog')
 
@@ -155,7 +105,7 @@ blog.innerHTML = categorie.map((items)=>
                +
                 `
                 </div>
-        </div>)
+        </div>
         `)
     }
 
@@ -179,21 +129,24 @@ function addtocart(a){
 function deletelemnt(a) {
     cart.splice(a, 1)
     displaycart( )
-
 }
 
 function displaycart(a) {
-    let j = 0;
+    let count = document.querySelector('.count')
+    let totaux = document.querySelector('.totaux')
+    count.innerHTML = cart.length
+    let j = 0, total = 0;
     if (cart.length == 0) {
         bodycart.innerHTML = "Your Cart is Empty"
     } else {
         bodycart.innerHTML = cart.map((items)=>{
 
             const {name, price, img} = items
+            total = total + price
+            totaux.innerHTML = total + " $"
+            
             return(`
             
-            
-        
         <div class="item">
 
 
