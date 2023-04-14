@@ -38,6 +38,7 @@ body{
     }
     .cart{
         width: 19rem;
+        margin: 57px -20rem;
     }
 }
 @media(min-width:991px){
@@ -74,7 +75,7 @@ nav div div ul li a{
     /* height: 100%; */
     position: fixed;
     z-index: 4;
-    margin: 57px -20rem;
+    /* margin: 57px -20rem; */
 
     /* display: none; */
     transition: .5s;
@@ -110,13 +111,17 @@ hr{
     color: red;
 }
 .item{
-    display: flex;
+    /* display: flex; */
     align-items: center;
 
 }
 .item button{
     outline: none;
     border: 1px solid #000;
+    
+}
+.item p{
+     
     
 }
 .item img{
@@ -141,15 +146,16 @@ hr{
     color: white;
     font-weight: bolder;
 }
-/* .btn{
+.item button{
     border: none;
     outline: none;
     background-color: #198754;
-    padding: 8px 12px;
     margin: 0px 27px;
+    padding: 5px 0px;
     color: white;
     font-weight: bolder;
-} */
+}
+
 .slideshow-container{
     padding-top: 3rem;
 }

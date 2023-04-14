@@ -188,14 +188,18 @@ function displaycart(a) {
 
                 <img src="${img}" >
                 <div class="d-flex justify-content-around">
-                    <h5 class="text-black"> ${name}</h5>
+                    
+
+                    <p class="text-black"> ${name}</p>
                     <span> ${price} $ </span> <br>` 
+                   
                 + 
                
                     "<button onclick= deletelemnt(" + (j++) + ")>remove</button>"
                     
-                
+                    
                 +
+                    
                 `
                 </div>
         </div>
