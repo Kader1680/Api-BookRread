@@ -13,12 +13,17 @@ body{
     .blog .card {
         
     }
-    .count{
-        margin: 8rem 34px;
+    .count {
+        margin: 5rem 27px;
+    }
+    .cart{
+        width: 100%;
+        margin: 57px -25rem;
     }
 }
 @media(min-width:768px){
-    .blog{
+    
+.blog{
         display: grid;
         grid-template-columns: 31% 31% 30%;
         width: 100%;
@@ -28,8 +33,11 @@ body{
         width: 14rem;
         margin-left: 3rem;
     }
-    .count{
-        margin: 8rem 34px;
+    .count {
+        margin: 5rem 27px;
+    }
+    .cart{
+        width: 19rem;
     }
 }
 @media(min-width:991px){
@@ -38,7 +46,8 @@ body{
         grid-template-columns: 23% 23% 23% 22%;
     }
     .count{
-        margin: 0rem 188px;
+        margin: 0rem 132px;
+
 
     }
     .blog .card {
@@ -62,11 +71,11 @@ nav div div ul li a{
     color: white;
 }
 .cart{
-    width: 19rem;
     /* height: 100%; */
     position: fixed;
-    margin: 57px -20rem;
     z-index: 4;
+    margin: 57px -20rem;
+
     /* display: none; */
     transition: .5s;
     -webkit-transition: .5s;
@@ -75,6 +84,12 @@ nav div div ul li a{
     -o-transition: .5s;
     
 }
+.blog .card {
+    background-color: #f8f9fa;
+    padding: 10px 0px;
+}
+
+    
 hr{
     height: 5px;
 }
@@ -135,8 +150,13 @@ hr{
     color: white;
     font-weight: bolder;
 } */
+.slideshow-container{
+    padding-top: 3rem;
+}
 .card img{
     height: 250px;
+    width: 190px;
+    margin: auto;
 }
 .blog{
     padding: 2rem 0rem;
